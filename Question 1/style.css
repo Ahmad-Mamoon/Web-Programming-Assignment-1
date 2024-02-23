@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    width: 200mm;
+    height: 280mm;
+    margin: auto;
+    padding: 30px;
+}
+
+header h1 {
+    color: rgb(253, 135, 0);
+}
+
+header {
+    background-color: #013063;
+    padding: 53px;
+}
+
+h3{
+    margin-bottom: 12px;
+    font-size: 21.5px;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.left{
+    background-color: rgb(248, 248, 248);
+    max-width: 510px;
+    font-size: 97%;
+}
+
+.right{
+    background-color: rgb(241, 129, 0);
+}
+
+hr{
+    background-color: rgb(241, 129, 0);
+    height: 5px;
+    border: none;
+    margin: -12px 40px;
+    margin-top: 10px;
+}
+
+.top{
+    margin-top: 55px;
+}
+
+section {
+    color: #024185;
+    padding: 30px 20px 10px 60px;
+    word-wrap: break-word;
+}
+
+section p {
+    font-size: 14px;
+    color: #01346b
+}
+
+.right h3{
+    color: #01346b;
+}
+
+img {
+    width: 65%;
+    height: 65%;
+    border: 4px solid rgb(253, 253, 241);
+    bottom: 25px;
+    position: relative;
+}
+
+.picture{
+    padding: 0;
+    transform: translate(15%, -30%);
+}
+
+.contact{
+    padding: 5px 0 0 5px;
+}
+
+.contact p{
+    font-weight: bold;
+}
+
+.icon-class{
+    font-size: 23px;
+}
+
+.projects li{
+    font-size: 14px;
+}
+
+.skills li{
+    font-size: 15px;
+}
