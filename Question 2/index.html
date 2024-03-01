@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="icon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Khula:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>PeoplePerHour.com</title>
+</head>
+<body>
+    <nav class="nav">
+        <img src="logo.png" class="logo">
+        <div class="nav1" id="nav1">
+            <a href="#" id="searcher"><i class='bx bx-search' style="font-size: 18px; transform: translate(0 , 4px);"></i> SEARCH<i class='bx bxs-chevron-down' style="font-size: 18px; transform: translate(0, 4px);"></i></a>
+            <a href="#" class="orange">HOW IT WORKS</a>
+            <div class="line"></div>
+            <a href="#" class="orange">LOGIN</a>
+            <a href="#" class="orange">SIGNUP</a>
+            <a href="#" style="color: rgb(255, 102, 0);" id="last">FREELANCER?</a>
+        </div>
+        <div class="bx bx-menu" id="menu" onclick="menutoggle()"></div>
+        <div class='bx bx-x' id="cross" onclick="menutoggle()"></div>
+    </nav>
+    <section class="nav2" id="nav2">
+        <select id="dropdown">
+            <option >Browse by Category</option>
+            <option >Technology & Programming</option>
+            <option >Writing & Translation</option>
+            <option >Design</option>
+            <option >Digital Marketing</option>
+            <option >Video, Photo & Image</option>
+            <option >Business</option>
+            <option >Music & Audio</option>
+            <option >Marketing, Branding & Sales</option>
+            <option >Social Media</option>
+        </select>
+        <a href="#" class="Tech">Technology & Programming</a>
+        <a href="#">Writing & Translation</a>
+        <a href="#">Design</a>
+        <a href="#">Digital Marketing</a>
+        <a href="#">Video, Photo & Image</a>
+        <a href="#">Business</a>
+        <a href="#">Music & Audio</a>
+        <a href="#">Marketing, Branding & Sales</a>
+        <a href="#">Social Media</a>
+    </section>
+    <div class="content">
+        <div class="left">
+            <h1 class="heading">Make bright ideas happen</h1>
+            <p>Access global talent on the freelancer website trusted by
+                over 1 million businesses worldwide.</p>
+            <br>
+            <form class="form">
+                <input type="text" id="search" placeholder="Try &quot;web development&quot;">
+                <button type="submit"><i class='bx bx-search'></i></button>
+            </form>
+            <div class="skills">
+                <a class="skills2">Popular skills: </a>
+                <a class="high">wordpress</a>
+                <a class="high">php development</a>
+                <a class="high">databases</a>
+                <a class="high">software testing</a>
+            </div>
+        </div>
+        <div class="right">
+            <img src="main-image.jpg" class="catalogue">
+        </div>
+    </div>
+
+    <script>
+        var navbar1 = document.getElementById("nav1");
+        var cross = document.getElementById("cross");
+        var menu = document.getElementById("menu");
+        navbar1.style.maxHeight = "0px";
+        function menutoggle() {
+            if(navbar1.style.maxHeight == "0px")
+            {
+                navbar1.style.maxHeight= "800px";
+                cross.classList.add("active");
+                menu.classList.add("active");
+                document.getElementById("nav2").style.zIndex = 50;
+            }
+            else
+            {
+                navbar1.style.maxHeight= "0px";
+                cross.classList.remove("active");
+                menu.classList.remove("active");
+                document.getElementById("nav2").style.zIndex = 150;
+            }
+        }
+    </script>
+</body>
+</html>
