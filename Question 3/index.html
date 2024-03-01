@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+</head>
+<body>
+
+<form id="jobApplicationForm" class="application-form">
+    <h2>Job Application Form</h2>
+
+    <!-- Personal Information -->
+    <label class="label-header">Personal Information:</label>
+    <label>Full Name:</label>
+    <div class="info-container">
+        <input type="text" name="firstName" placeholder="First Name" required>
+        <input type="text" name="lastName" placeholder="Last Name" required>
+    </div>
+
+    <label>Contact Information:</label>
+    <div class="info-container">
+        <input type="tel" name="phoneNumber" placeholder="Phone Number" required>
+        <input type="email" name="emailAddress" placeholder="Email Address" required>
+    </div>
+
+    <label>Address:</label>
+    <div class="info-container">
+        <input type="text" name="street" placeholder="Street" required>
+        <input type="text" name="city" placeholder="City" required>
+        <input type="text" name="state" placeholder="State" required>
+        <input type="text" name="zipCode" placeholder="ZIP Code" required>
+    </div>
+
+
+    <!-- Resume and Cover Letter -->
+    <label class="label-header">Resume and Cover Letter:</label>
+    <label>Upload Resume:</label>
+    <input type="file" name="resume" accept=".pdf,.doc,.docx" required>
+    
+    <label>Cover Letter:</label>
+    <textarea name="coverLetter" rows="4" required></textarea>
+    
+    <!-- Education -->
+    <label class="label-header">Education:</label>
+
+    <div class="info-container">
+        <label>Education Level:</label>
+        <select name="educationLevel" required>
+            <option value="none">Select</option>
+            <option value="highSchool">High School</option>
+            <option value="bachelors">Bachelors</option>
+            <option value="masters">Masters</option>
+            <option value="phd">P.H.D.</option>
+        </select>
+
+            <label>Name of School/University:</label>
+            <input type="text" name="university" placeholder="FAST" required>
+        
+    </div>
+        
+    <label>Major/Area of Study:</label>
+    <input type="text" name="major" placeholder="Data Science" required>
+    
+    <label>Graduation Year:</label>
+    <input type="date" name="graduationYear" required>
+
+    
+
+    <!-- Employement history -->
+    <label class="label-header">Employment History:</label>
+
+    <div class="info-container">
+        <label>Previous Job Title:</label>
+        <input type="text" name="previousJobTitle" placeholder="Title">
+
+        <label>Company Name:</label>
+        <input type="text" name="companyName" placeholder="Company Name">
+    </div>
+
+    <div class="info-container">
+        <label>From</label>
+        <input type="date" name="employmentStartDate">
+        <label>To:</label>
+        <input type="date" name="employmentEndDate">
+    </div>
+
+    <label>Job Responsibilities:</label>    
+    <textarea name="jobResponsibilities" rows="4"></textarea>
+    
+    <!-- Skills -->
+    <label class="label-header">Skills:</label>
+    <div class="info-container">
+        <label>Relevant Skills:</label>
+        <input type="text" name="relevantSkills" placeholder="Skills" required>
+
+        <label>Certifications:</label>
+        <input type="text" name="certifications" placeholder="Certificates">
+    </div>
+
+    <!-- Availability -->
+    <label class="label-header">Availability:</label>
+    <div class="info-container">
+        <label>Available Start Date:</label>
+        <input type="date" name="availableStartDate" required>
+
+        <label>Preferred Work Schedule:</label>
+        <select name="preferredWorkSchedule" required>
+            <option value="none">Select</option>
+            <option value="8am-5pm">8am to 5pm</option>
+            <option value="9am-6pm">9am to 6pm</option>
+            <option value="10am-7pm">10am to 7pm</option>
+        </select>
+    </div>
+    <label>Willingness to Relocate:</label>
+    <input type="checkbox" name="relocate" required>
+
+    <!-- References -->
+    <label class="label-header">References:</label>
+    <div class="info-container">
+        <label>Reference Name:</label>
+        <input type="text" name="referenceName" placeholder="Name" required>
+        <label>Reference Designation:</label>
+        <input type="text" name="referenceDesignation" placeholder="Designation" required>
+    </div>
+    
+    <div class="info-container">
+        <label>Reference Contact Information:</label>
+        <input type="tel" name="PhoneNumber" placeholder="Phone Number" required>
+        <input type="email" name="EmailAddress" placeholder="Email Address" required>
+    </div>
+
+    <label>Relationship to Applicant:</label>
+    <input type="text" name="relationshipToApplicant" placeholder="Relation" required>
+
+    <!-- Additional Questions -->
+    <label class="label-header">Additional Questions:</label>
+    <label>Why do you want to work for this company?</label>
+    <textarea name="whyWorkHere" rows="4" required></textarea>
+
+    <!-- Consent and Agreement -->
+    <label class="label-header">Consent and Agreement:</label>
+    <input type="checkbox" name="termsConditions" required> I agree to the terms and conditions
+    <br>
+    <input type="checkbox" name="privacyPolicy" required> I acknowledge the privacy policy
+
+    <!-- Submit Button -->
+    <button type="button" onclick="submitForm()">Submit</button>
+</form>
+
+<!-- View Applications as Table Button -->
+<button id="viewTableBtn" onclick="viewApplications()" style="display: none;">View Applications as Table</button>
+
+<!-- Display Table -->
+<table id="applicationsTable" style="display: none;">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>  
+            <th>Phone Number</th>
+            <th>Email</th>
+
+            <th>Street</th>
+            <th>City</th>
+            <th>State</th>
+            <th>ZIP Code</th>
+
+            <th>Resume</th>
+            <th>Cover Letter</th>
+
+            <th>Education Level</th>
+            <th>University</th>
+            <th>Major</th>
+            <th>Graduation Year</th>
+            
+            <th>Previous Job Title</th>
+            <th>Company Name</th>
+            <th>Employment Start Date</th>
+            <th>Employment End Date</th>
+            <th>Job Responsibilities</th>
+            
+            <th>Relevant Skills</th>
+            <th>Certifications</th>
+
+            <th>Available Start Date</th>
+            <th>Preferred Work Schedule</th>
+            <th>Willingness to Relocate</th>
+
+            <th>Reference Name</th>
+            <th>Reference Designation</th>
+            <th>Reference Phone Number</th>
+            <th>Reference Email Address</th>
+            <th>Relationship to Applicant</th>
+
+            <th>Why Work Here</th>
+            <th>Terms and Conditions</th>
+            <th>Privacy Policy</th>
+
+            <!-- Add more columns for other fields -->
+        </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+</table>
+
+</body>
+</html>

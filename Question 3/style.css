@@ -1,0 +1,130 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4
+}
+
+.application-form {
+    max-width: 600px;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1)
+}
+
+h2 {
+    color: #333
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: #555
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px
+}
+
+button {
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff
+}
+
+.label-header {
+    font-weight: 700;
+    color: #333
+}
+
+
+.info-container {
+    display: flex;
+    gap: 10px
+}
+
+.info-container input {
+    flex: 1
+}
+
+select {
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #555;
+    appearance: none
+}
+
+select:focus {
+    outline: 0;
+    box-shadow: 0 0 5px rgba(0, 123, 255, .7)
+}
+
+select::-webkit-inner-spin-button,
+select::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0
+}
+
+select {
+    -moz-appearance: none;
+    appearance: none
+}
+
+.toast {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+    
+#applicationsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#applicationsTable th, #applicationsTable td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+}
+
+#applicationsTable th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#tableBody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#tableBody tr:hover {
+    background-color: #ddd;
+}
