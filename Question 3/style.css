@@ -66,6 +66,21 @@ table {
     flex: 1
 }
 
+.checkbox-container {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-container label {
+    margin-right: 10px;
+}
+
+.checkbox-container input{
+    margin-right: 5px;
+    width: 50%;
+    top: 5px;
+    position: relative;
+}
 select {
     padding: 10px;
     margin-top: 5px;
@@ -104,7 +119,7 @@ select {
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-    
+
 #applicationsTable {
     width: 100%;
     border-collapse: collapse;
@@ -127,4 +142,39 @@ select {
 
 #tableBody tr:hover {
     background-color: #ddd;
+}
+
+#jobApplicationForm {
+    position: relative;
+}
+
+button[type="button"] {
+    position: relative;
+    right: 50%;
+    bottom: 0px;
+    left: 80%;
+    margin: 10px;
+}
+
+#viewTableBtn{
+    left: 50%;
+    position: relative;
+    top: 10px;
+}
+
+/* Add the following media query for responsiveness */
+@media screen and (max-width: 600px) {
+    .info-container {
+        flex-direction: column;
+    }
+
+    button[type="button"] {
+        width: 100%; /* Make the button full width */
+        left: 0;
+    }
+
+    #viewTableBtn {
+        width: 100%;
+        left: 0;
+    }
 }
