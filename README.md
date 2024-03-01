@@ -65,6 +65,3 @@ Develop a web form for job applications with client-side validation and data tra
 
 - Include a button labeled "View Applications as Table" at the end of the web page.
 - Clicking the button transforms submitted application data into a responsive table format.
-
-## File Structure
-
