@@ -6,7 +6,7 @@ Create a one-page basic resume using HTML and CSS. Include an external CSS file 
 
 ## Question 2: Freelancing Platform Catalogue
 
-Design a cross-browser compatible, responsive layout using CSS for browsing the catalogue of a freelancing platform. Include an external CSS file named `style.css`.
+Design a cross-browser compatible, responsive layout using CSS for browsing the catalogue of a freelancing platform (PeoplePerHour). Include an external CSS file named `style.css`.
 
 ## Question 3: Job Application Web Form
 
