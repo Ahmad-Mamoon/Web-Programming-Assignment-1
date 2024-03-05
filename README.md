@@ -10,7 +10,7 @@ Design a cross-browser compatible, responsive layout using CSS for browsing the 
 
 ## Question 3: Job Application Web Form
 
-Develop a web form for job applications with client-side validation and data transformation. Include an external CSS file named `style.css` and use JavaScript for validation.
+Develop a web form for job applications with client-side validation and data transformation. Include an external CSS file named `style.css` and use JavaScript `script.js` for validation.
 
 ### Application Form Fields:
 
