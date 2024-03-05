@@ -23,7 +23,7 @@
 
     <label>Contact Information:</label>
     <div class="info-container">
-        <input type="tel" name="phoneNumber" placeholder="Phone Number" required>
+        <input type="tel" name="phoneNumber" placeholder="03*********" required>
         <input type="email" name="emailAddress" placeholder="Email Address" required>
     </div>
 
@@ -34,7 +34,6 @@
         <input type="text" name="state" placeholder="State" required>
         <input type="text" name="zipCode" placeholder="ZIP Code" required>
     </div>
-
 
     <!-- Resume and Cover Letter -->
     <label class="label-header">Resume and Cover Letter:</label>
@@ -67,8 +66,6 @@
     
     <label>Graduation Year:</label>
     <input type="date" name="graduationYear" required>
-
-    
 
     <!-- Employement history -->
     <label class="label-header">Employment History:</label>
@@ -110,9 +107,9 @@
         <label>Preferred Work Schedule:</label>
         <select name="preferredWorkSchedule" required>
             <option value="none">Select</option>
-            <option value="8am-5pm">8am to 5pm</option>
-            <option value="9am-6pm">9am to 6pm</option>
-            <option value="10am-7pm">10am to 7pm</option>
+            <option value="morning">Morning Shift</option>
+            <option value="evening">Evening Shift</option>
+            <option value="night">Night Shift</option>
         </select>
     </div>
 
@@ -133,7 +130,7 @@
     
     <div class="info-container">
         <label>Reference Contact Information:</label>
-        <input type="tel" name="PhoneNumber" placeholder="Phone Number" required>
+        <input type="tel" name="PhoneNumber" placeholder="03*********" required>
         <input type="email" name="EmailAddress" placeholder="Email Address" required>
     </div>
 
@@ -153,6 +150,7 @@
     <div class="checkbox-container">
         I acknowledge the privacy policy<input type="checkbox" name="privacyPolicy" style="left:17px;" required> 
     </div>
+    
     <!-- Submit Button -->
     <button type="button" onclick="submitForm()">Submit</button>
 </form>
@@ -205,7 +203,6 @@
             <th>Terms and Conditions</th>
             <th>Privacy Policy</th>
 
-            <!-- Add more columns for other fields -->
         </tr>
     </thead>
     <tbody id="tableBody"></tbody>

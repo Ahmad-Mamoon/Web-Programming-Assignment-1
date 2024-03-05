@@ -1,10 +1,9 @@
-
+let formSubmitted = false;
 function submitForm() {
 
     const form = document.getElementById('jobApplicationForm');
     resetValidationStyles(form);
 
-    // Check if all required fields are entered
     const emptyFieldName = checkEmptyFields();
     if (emptyFieldName) {
         showToast(`Please fill in "${emptyFieldName}".`);
@@ -13,16 +12,23 @@ function submitForm() {
     }
 
     if (validateForm()) {
+
+        const termsConditionsCheckbox = form.elements['termsConditions'];
+        const privacyPolicyCheckbox = form.elements['privacyPolicy'];
+
+        if (!termsConditionsCheckbox.checked || !privacyPolicyCheckbox.checked) {
+            showToast('Please check the last two checkboxes before submitting.');
+            return;
+        }
+
         const formData = collectFormData();
         console.log('Submitted Data:', formData);
 
         document.getElementById('viewTableBtn').style.display = 'inline-block';
-
+        formSubmitted = true;
         showToast('Form submitted successfully!');
         // clearForm();
     }
-
-
 }
 
 function collectFormData() {
@@ -36,7 +42,6 @@ function collectFormData() {
             formData[element.name] = element.value;
         }
     }
-
     return formData;
 }
 
@@ -44,30 +49,46 @@ function collectFormData() {
 function validateForm() {
     const form = document.getElementById('jobApplicationForm');
 
-    // resetValidationStyles(form);
+    resetValidationStyles(form);
 
     let isValid = true;
 
-    const firstName = form.elements['firstName'].value.trim();
-    if (firstName === '') {
-        isValid = false;
-        markInvalidField(form.elements['firstName']);
-        console.log('name fail Data:');   
+
+    const nameFields = ['firstName', 'lastName' , "referenceName"];
+    for (const fieldName of nameFields) {
+        const fieldValue = form.elements[fieldName].value.trim();
+        if (fieldValue === '') {
+            isValid = false;
+            markInvalidField(form.elements[fieldName]);
+            showToast(`Invalid Format for "${fieldName}".`);
+
+            console.log(`${fieldName} field is empty.`);
+        }
     }
 
-    const email = form.elements['emailAddress'].value.trim();
-    if (!isValidEmail(email)) {
-        isValid = false;
-        markInvalidField(form.elements['emailAddress']);
-        console.log('email fail Data:');   
+    const emailFields = ['emailAddress' , 'EmailAddress'];
+    for (const fieldName of emailFields) {
+        const fieldValue = form.elements[fieldName].value.trim();
+        if (!isValidEmail(fieldValue)) {
+            isValid = false;
+            markInvalidField(form.elements[fieldName]);
+            showToast(`Invalid Format for "${fieldName}".`);
 
+            console.log(`${fieldName} field is not a valid email.`);
+        }
     }
 
-    const phoneNumber = form.elements['phoneNumber'].value.trim();
-    if (!isValidPhoneNumber(phoneNumber)) {
-        isValid = false;
-        markInvalidField(form.elements['phoneNumber']);
-        console.log('phone fail Data:');   
+    
+    const phoneFields = ['phoneNumber' , 'PhoneNumber'];
+    for (const fieldName of phoneFields) {
+        const fieldValue = form.elements[fieldName].value.trim();
+        if (!isValidPhoneNumber(fieldValue)) {
+            isValid = false;
+            markInvalidField(form.elements[fieldName]);
+            showToast(`Invalid Format for "${fieldName}".`);
+
+            console.log(`${fieldName} field is not a valid phone number.`);
+        }
     }
 
     return isValid;
@@ -79,9 +100,8 @@ function isValidEmail(email) {
 }
 
 function isValidPhoneNumber(phoneNumber) {
-    // const phoneRegex = /^\d{11}$/;
-    // return phoneRegex.test(phoneNumber);
-    return phoneNumber;
+    const phoneRegex = /^\d{11}$/;
+    return phoneRegex.test(phoneNumber);
 }
 
 function markInvalidField(field) {
@@ -104,16 +124,25 @@ function showToast(message) {
     document.body.appendChild(toast);
 
     setTimeout(() => {
-        toast.remove();
-    }, 3000);
+        toast.style.animation = 'slideOut 0.5s forwards';
+        setTimeout(() => {
+            toast.remove();
+        }, 500);
+    }, 2500);
 }
 
 
 function viewApplications() {
+
+    if (!formSubmitted) {
+        showToast('Please submit the form first.'); 
+        return;
+    }
+
+
     const formData = collectFormData();
     const tableBody = document.getElementById('tableBody');
 
-    // Append a new row for each submitted application
     const newRow = tableBody.insertRow();
 
     for (const key in formData) {
@@ -124,8 +153,9 @@ function viewApplications() {
     // Display the table
     const table = document.getElementById('applicationsTable');
     table.style.display = 'table';
-}
+    formSubmitted = false;
 
+}
 
 function clearForm() {
     const form = document.getElementById('jobApplicationForm');
@@ -142,6 +172,5 @@ function checkEmptyFields() {
             return field.name;
         }
     }
-
     return null;
 }

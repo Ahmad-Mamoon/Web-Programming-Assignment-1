@@ -1,22 +1,30 @@
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
-    background-color: #f4f4f4
+    height: 100vh;
+    background-color: rgb(29 14 14 / 10%);
 }
 
+
 .application-form {
+    width: 80%;
     max-width: 600px;
     margin: auto;
-    background-color: #fff;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1)
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-    color: #333
+    color: #333;
+    text-align: center;
 }
+
+
 
 label {
     display: block;
@@ -120,6 +128,24 @@ select {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+@keyframes slideIn {
+    from {
+        top: -100px;
+    }
+    to {
+        top: 10px;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        top: 10px;
+    }
+    to {
+        top: -100px; 
+    }
+}
+
 #applicationsTable {
     width: 100%;
     border-collapse: collapse;
@@ -162,14 +188,13 @@ button[type="button"] {
     top: 10px;
 }
 
-/* Add the following media query for responsiveness */
 @media screen and (max-width: 600px) {
     .info-container {
         flex-direction: column;
     }
 
     button[type="button"] {
-        width: 100%; /* Make the button full width */
+        width: 100%; 
         left: 0;
     }
 
