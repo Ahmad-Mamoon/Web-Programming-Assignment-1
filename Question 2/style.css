@@ -186,6 +186,38 @@
     font-size: 21px;
 }
 
+
+/* .right {
+    max-width: 50%;
+}
+
+.carousel {
+    display: flex;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.catalogue {
+    width: 100%;
+    height: auto;
+    flex: 0 0 auto;
+    animation: carouselAnimation 18s infinite linear;
+}
+
+@keyframes carouselAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+} */
+
+
 .right{
     max-width: 50%;
 }
